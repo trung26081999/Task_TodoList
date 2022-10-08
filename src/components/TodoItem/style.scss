@@ -1,0 +1,30 @@
+.todo-item {
+  width: 250px;
+  border: 1px solid rgba(41, 41, 241, 0.89);
+  // margin: 0 auto;
+  border-radius: 6px;
+  display: block;
+  text-align: left;
+
+  //   justify-content: start;
+  //   align-items: flex-start;
+  padding: 16px;
+  margin-right: 10px;
+  margin-top: 10px;
+
+  .todo-item-title {
+    font-weight: bold;
+  }
+  .todo-item-creator {
+  }
+  .todo-item-status {
+    color: greenyellow;
+    font-weight: bold;
+  }
+  .todo-item-divider {
+    width: 100%;
+    flex: 1;
+  }
+  .todo-item-description {
+  }
+}

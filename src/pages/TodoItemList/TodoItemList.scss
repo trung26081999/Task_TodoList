@@ -1,0 +1,8 @@
+.todo-item-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-left:10px;
+}
