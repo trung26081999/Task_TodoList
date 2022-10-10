@@ -7,10 +7,9 @@ import { useParams } from "react-router";
 import { useNavigate } from "react-router-dom";
 import { TodoListContext } from "../../context/TodoListContext";
 // import { v4 as uuidv4 } from "uuid";
-import clientServer from '../../server/clientServer';
+import clientServer from "../../server/clientServer";
 
 function EditForm(props) {
-
   // const {data}=useContext(TodoListContext)
 
   const { set, get } = localStorageUtil(localStorageKey.todoItems, []);
@@ -40,10 +39,15 @@ function EditForm(props) {
     description: "",
   });
   useEffect(() => {
-    clientServer.get(`todoItems/${id}`).then((res)=>{
-      setTodoItem(res.data);
-      setdefaultTodoList(res.data);
-    }).catch((err)=>{console.log(err);})
+    clientServer
+      .get(`todoItems/${id}`)
+      .then((res) => {
+        setTodoItem(res.data);
+        setdefaultTodoList(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
     // const item = data.find((item) => item.id === id);
     // setTodoItem(item);
     // setdefaultTodoList(item);
@@ -171,22 +175,22 @@ function EditForm(props) {
         {""} DONE
       </div>
       <div className="button">
-      {/* <div>
+        {/* <div>
         <input type="radio">
           <option value={TASK_STATUS.new}>{TASK_STATUS.new}</option>
           <option value={TASK_STATUS.doing}>{TASK_STATUS.doing}</option>
           <option value={TASK_STATUS.done}>{TASK_STATUS.done}</option>
         </input>
       </div> */}
-      <button onClick={handleSubmit} type="submit" className="btn">
-        SUBMIT
-      </button>
-      <button onClick={handleDelete2} type="submit" className="btn">
-        DELETE
-      </button>
-      <button onClick={handleReset} type="submit" className="btn">
-        RESET
-      </button>
+        <button onClick={handleSubmit} type="submit" className="btn">
+          SUBMIT
+        </button>
+        <button onClick={handleDelete2} type="submit" className="btn">
+          DELETE
+        </button>
+        <button onClick={handleReset} type="submit" className="btn">
+          RESET
+        </button>
       </div>
     </div>
   );
